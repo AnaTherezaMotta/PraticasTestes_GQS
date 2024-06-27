@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;quadratic.Equação&apos; to &apos;Equacao&apos;&#x0D;&#x0A;- Original project: &apos;TestePratica4&apos;&#x0D;&#x0A;- Original element: &apos;quadratic.Equação&apos;&#x0D;&#x0A;- Renamed element: &apos;quadratic.Equacao&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Equação&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;quadratic{Equação.java[Equação" matchStrategy="1" name="Equacao" qualified="false" references="true" similarDeclarations="false" stamp="1719440342188" textual="false" version="1.0"/>
+</session>

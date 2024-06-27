@@ -1,0 +1,62 @@
+package quadratic;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Equacao {
+
+    public static String calcularEquacao(double a, double b, double c) {
+        double d = (b * b) - 4 * a * c;
+        return verificarCoeficientes(a, b, c, d);
+    }
+
+    private static String verificarCoeficientes(double a, double b, double c, double d) {
+        if (a == 0 && b == 0 && c == 0) {
+            return "Igualdade confirmada 0=0";
+        } else if (a == 0 && b == 0) {
+            return "Coeficientes informados incorretamente";
+        } else if (a == 0) {
+            return "Esta e uma equacao de primeiro grau. X = " + (-c / b);
+        } else {
+            return calcularRaizes(a, b, c, d);
+        }
+    }
+
+    private static String calcularRaizes(double a, double b, double c, double d) {
+        StringBuilder resultado = new StringBuilder();
+        resultado.append("Esta e uma equacao de segundo grau\n");
+        
+        if (d < 0) {
+            resultado.append("Esta equacao nao possui raizes reais: Delta = " + d);
+        } else if (d == 0) {
+            resultado.append("Esta equacao possui duas raizes iguais: X = " + (-b / (2 * a)));
+        } else {
+            double x1 = (-b + Math.sqrt(d)) / (2 * a);
+            double x2 = (-b - Math.sqrt(d)) / (2 * a);
+            resultado.append("Delta: "+ d +" x1: "+ x1 +" x2: "+x2);
+        }
+        return resultado.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        double a = 0.0, b = 0.0, c = 0.0;
+
+        try {
+            System.out.print("Digite o valor de a: ");
+            a = myObj.nextDouble();
+            System.out.print("Digite o valor de b: ");
+            b = myObj.nextDouble();
+            System.out.print("Digite o valor de c: ");
+            c = myObj.nextDouble();
+        } catch (InputMismatchException e) {
+            System.err.println("Nao e numero");
+            myObj.close();
+            return;
+        }
+        myObj.close();
+
+        String resultado = calcularEquacao(a, b, c);
+        System.out.println(resultado);
+    }
+}

@@ -1,0 +1,114 @@
+package quadratic;
+
+import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
+import static org.junit.Assert.fail;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class EquacaoTeste {
+
+	
+	 private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	    private final PrintStream originalOut = System.out;
+
+	    @Before
+	    public void setUpStreams() {
+	        System.setOut(new PrintStream(outContent));
+	    }
+
+	    @After
+	    public void restoreStreams() {
+	        System.setOut(originalOut);
+	    }
+
+	    @Test
+	    public void testEquacaoSegundoGrau_ComDeltaPositivo() {
+	        String input = "1\n-3\n2\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Esta e uma equacao de segundo grau\n" +
+	                                "Delta: 1.00\n" +
+	                                "x': 2.00\n" +
+	                                "x'': 1.00\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testEquacaoSegundoGrau_ComDeltaZero() {
+	        String input = "1\n-2\n1\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Esta equacao possui duas raizes iguais: X = 1.0\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testEquacaoSegundoGrau_ComDeltaNegativo() {
+	        String input = "1\n1\n1\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Esta equacao nao possui raizes reais: Delta = -3.00\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testEquacaoPrimeiroGrau() {
+	        String input = "0\n2\n-4\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Esta e uma equacao de primeiro grau. X = 2.0\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testIgualdadeZero() {
+	        String input = "0\n0\n0\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Igualdade confirmada 0=0\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testCoeficientesIncorretos() {
+	        String input = "0\n0\n5\n";
+	        simulateInput(input);
+
+	        Equacao.main(new String[0]);
+
+	        String expectedOutput = "Coeficientes informados incorretamente\n";
+	        assertEquals(expectedOutput, outContent.toString());
+	    }
+
+	    @Test
+	    public void testInputMismatchException() {
+	        String input = "a\nb\nc\n";
+	        simulateInput(input);
+
+	        try {
+	            Equacao.main(new String[0]);
+	            fail("Deveria ter lançado InputMismatchException");
+	        } catch (InputMismatchException e) {
+	            assertEquals("Nao e numero\n", outContent.toString());
+	        }
+	    }
+
+	    private void simulateInput(String input) {
+	        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+	    }
+
+}

@@ -1,0 +1,36 @@
+package numero;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class NumeroTeste {
+
+	Numero objNum;
+	@Before
+	public void setUp() throws Exception {
+		objNum = new Numero();
+	}
+
+	@Test
+	public void testRaizCubica() {
+		assertEquals("CASO 1: ", 27, objNum.raizCubica(3), 0);
+		assertEquals("CASO 2: ", 20, objNum.raizCubica(2.71), 0.01);
+	}
+
+	@Test
+	public void testFatorial() {
+		assertEquals("CASO 1: ", 5, objNum.fatorial(120));
+		assertEquals("CASO 2: ", 0, objNum.fatorial(1));
+	}
+
+	@Test
+	public void testSomaIntervalo() {
+		assertEquals("CASO 1: ", 5, objNum.somaIntervalo(15));
+		assertEquals("CASO 2: ", 0, objNum.somaIntervalo(0));
+	}
+
+
+
+}

@@ -1,0 +1,21 @@
+package compras;
+
+import estoque.Produto;
+
+public class Compra {
+    private Produto produto;
+    private int quantidade;
+
+    public Compra(Produto produto, int quantidade) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
+
+    public String getProduto() {
+        return produto;
+    }
+
+    public void setNome(String produto) {
+        this.produto = produto;
+    }
+}

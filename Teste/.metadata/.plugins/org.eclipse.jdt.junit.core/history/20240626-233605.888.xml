@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="EquacaoTeste" project="TestePratica4" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="quadratic.EquacaoTeste" time="0.008">
+    <testcase name="testEquacaoSegundoGrau_ComDeltaZero" classname="quadratic.EquacaoTeste" time="0.002"/>
+    <testcase name="testIgualdadeZero" classname="quadratic.EquacaoTeste" time="0.001"/>
+    <testcase name="testCoeficientesIncorretos" classname="quadratic.EquacaoTeste" time="0.0"/>
+    <testcase name="testEquacaoPrimeiroGrau" classname="quadratic.EquacaoTeste" time="0.0"/>
+    <testcase name="testEquacaoSegundoGrau_ComDeltaPositivo" classname="quadratic.EquacaoTeste" time="0.005"/>
+    <testcase name="testEquacaoSegundoGrau_ComDeltaNegativo" classname="quadratic.EquacaoTeste" time="0.0"/>
+  </testsuite>
+</testrun>

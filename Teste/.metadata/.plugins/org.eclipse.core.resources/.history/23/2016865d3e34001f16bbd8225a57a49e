@@ -1,0 +1,39 @@
+package testes;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class EstoqueTeste {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testEstoque() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAdicionarProduto() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoverProduto() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testConsultarProduto() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListarProdutos() {
+		fail("Not yet implemented");
+	}
+
+}

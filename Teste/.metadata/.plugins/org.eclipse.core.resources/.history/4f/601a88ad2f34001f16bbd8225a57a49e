@@ -1,0 +1,29 @@
+package Testes;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class RelatorioTeste {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testCalcularTotal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAplicarDesconto() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAdicionarTaxaEntrega() {
+		fail("Not yet implemented");
+	}
+
+}

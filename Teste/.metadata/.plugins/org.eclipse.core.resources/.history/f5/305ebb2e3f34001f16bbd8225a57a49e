@@ -1,0 +1,25 @@
+package testes;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import estoque.Produto;
+
+public class ProdutoTeste {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+	
+	@Test
+    public void testCriacaoProduto() {
+        Produto produto = new Produto("Arroz", 10, 5.0);
+
+        assertEquals("Arroz", produto.getNome());
+        assertEquals(10, produto.getQuantidade());
+        assertEquals(5.0, produto.getPreco(), 0.01);
+    }
+
+}

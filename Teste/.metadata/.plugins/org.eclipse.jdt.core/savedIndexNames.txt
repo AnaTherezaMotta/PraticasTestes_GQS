@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+C:\Users\teteo\OneDrive\Documentos\Teste\.metadata\.plugins\org.eclipse.jdt.core
+3467432296.index
+1865797976.index
+1470464210.index
+2614590436.index
+1561562619.index
+1264994619.index

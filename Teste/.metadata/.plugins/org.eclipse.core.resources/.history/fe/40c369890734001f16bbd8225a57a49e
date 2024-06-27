@@ -1,0 +1,29 @@
+package imc;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CalculoIMCTeste {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testCalculoIMC() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCalcularIMC() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testClassificarIMC() {
+		fail("Not yet implemented");
+	}
+
+}

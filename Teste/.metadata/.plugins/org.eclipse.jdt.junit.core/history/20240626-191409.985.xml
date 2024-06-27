@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CalculoIMCTeste" project="TesteAtv3Parte2" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="imc.CalculoIMCTeste" time="0.002">
+    <testcase name="testAbaixoDoPeso" classname="imc.CalculoIMCTeste" time="0.001"/>
+    <testcase name="testObeso" classname="imc.CalculoIMCTeste" time="0.0"/>
+    <testcase name="testSobrepeso" classname="imc.CalculoIMCTeste" time="0.0"/>
+    <testcase name="testObesoMorbido" classname="imc.CalculoIMCTeste" time="0.0"/>
+    <testcase name="testPesoNormal" classname="imc.CalculoIMCTeste" time="0.001"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,83 @@
+package teste;
+
+import static org.junit.Assert.*;
+
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+import loja.Produto;
+import loja.Relatorio;
+
+public class RelatorioTeste {
+
+
+    private Relatorio relatorio;
+    private List<Produto> produtos;
+
+    @Before
+    public void setUp() {
+        produtos = new ArrayList<>();
+    }
+
+    @Test
+    public void testCalcularTotal_ComDescontoVIP() {
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 25));
+        produtos.add(new Produto("Produto 1", 2.0, 10.0));
+        produtos.add(new Produto("Produto 2", 1.0, 20.0));
+
+        double total = relatorio.calcularTotal(produtos, true);
+
+        assertEquals(42.5, total, 0.01);
+    }
+
+    @Test
+    public void testCalcularTotal_ComDescontoNaoVIP() {
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 25));
+        produtos.add(new Produto("Produto 1", 2.0, 10.0));
+        produtos.add(new Produto("Produto 2", 1.0, 20.0));
+
+        double total = relatorio.calcularTotal(produtos, false);
+        assertEquals(45.25, total, 0.01);
+    }
+    @Test
+    public void testAplicarDesconto_ClienteVIP() {
+        double total = 100.0;
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 25)); 
+
+        double totalComDesconto = relatorio.aplicarDesconto(total, true);
+        assertEquals(90.0, totalComDesconto, 0.01);
+    }
+
+    @Test
+    public void testAplicarDesconto_ClienteNaoVIP() {
+        double total = 100.0;
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 25)); 
+
+        double totalComDesconto = relatorio.aplicarDesconto(total, false);
+        assertEquals(95.0, totalComDesconto, 0.01);
+    }
+
+    @Test
+    public void testAdicionarTaxaEntrega_DiaUtil() {
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 25)); 
+
+        double total = 100.0;
+        double totalComEntrega = relatorio.adicionarTaxaEntrega(total);
+        assertEquals(105.0, totalComEntrega, 0.01);
+    }
+
+    @Test
+    public void testAdicionarTaxaEntrega_Domingo() {
+        relatorio = new Relatorio(LocalDate.of(2024, 6, 30)); 
+
+        double total = 100.0;
+        double totalComEntrega = relatorio.adicionarTaxaEntrega(total);
+        assertEquals(110.0, totalComEntrega, 0.01);
+    }
+}
